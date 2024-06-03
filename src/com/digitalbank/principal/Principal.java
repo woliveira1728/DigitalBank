@@ -137,11 +137,10 @@ public class Principal {
 
         System.out.println("Enter the transfer amount:");
         Double amount = scanner.nextDouble();
-        account.withdraw(amount);
 
         Account selectedAccount = getAccountByNumber(destinationAcc);
         if (selectedAccount != null) {
-            selectedAccount.deposit(amount);
+            account.transfer(selectedAccount, amount);
             System.out.println("Amount deposited into the account " + selectedAccount.getAccount());
             account.printextract();
         } else {
